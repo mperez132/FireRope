@@ -30,7 +30,7 @@ const G = {
 options = {
     isCapturing: true,
     isCapturingGameCanvasOnly: true,
-    theme: "dark",
+    theme: "shapeDark",
     isPlayingBgm: true,
     isReplayEnabled: true,
     captureCanvasScale: 2,
