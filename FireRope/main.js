@@ -30,7 +30,7 @@ const G = {
 options = {
     isCapturing: true,
     isCapturingGameCanvasOnly: true,
-    theme: "shapeDark",
+    theme: "crt",
     isPlayingBgm: true,
     isReplayEnabled: true,
     captureCanvasScale: 2,
@@ -125,7 +125,12 @@ function update() {
       -PI,
       PI
     )
-    color("red")
+    if(input.isPressed) {
+      color("yellow")
+    }
+    else {
+      color("red")
+    }
     text(`${rope.count}`, 50, 10);
     if (pa * a < 0 && abs(a) < PI / 2) {
         if (player.mode === "jump") {
@@ -177,8 +182,10 @@ function update() {
           }
         }
     }
-    color("light_black");
+    color("black");
     rect(0, 90, 110, 10);
+    color("light_black");
+    rect(0, 91, 110, 10);
     // color("cyan");
     color ("black");
     // box(player.pos, 4);
@@ -200,6 +207,23 @@ function update() {
         // Draw the star as a square of size 1
         box(s.pos, 1);
     });
-
-
+    if (input.isPressed){
+      color("yellow")
+    }
+    else {
+      color("red")
+    }
+    box(0,75,2,G.HEIGHT + 20);
+    box(40,0,G.WIDTH,2);
+    box(40,G.HEIGHT,G.WIDTH,2);
+    
+    if (input.isPressed){
+      color("yellow")
+    }
+    else {
+      color("red")
+    }
+    box(G.WIDTH,75,2,G.HEIGHT + 20);
+    box(100,0,G.WIDTH/2,2);
+    box(100,G.HEIGHT,G.WIDTH/2,2);
 }
